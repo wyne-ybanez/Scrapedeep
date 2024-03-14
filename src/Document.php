@@ -28,9 +28,6 @@ class Document
             ['spaceAfter' => 640]
         );
 
-        // Shorten title
-        $title = strlen($title) > 80 ? substr($title, 0, 70) . '...' : $title;
-
         // New portrait section
         $section = $phpWordTemplate->addSection();
 
@@ -51,12 +48,15 @@ class Document
 
         $domain = parse_url($target_url, PHP_URL_HOST);
 
-       // Save files
-       $pathDocx = "output/Docx/{$domain}/";
-       self::saveDocx($phpWordTemplate, $pathDocx, $title);
+        // Shorten title for docs
+        $shortenedTitle = strlen($title) > 80 ? substr($title, 0, 80) . '...' : $title;
 
-       $pathHTML = "output/HTML/{$domain}/";
-       self::saveHTML($phpWordTemplate, $pathHTML, $title);
+        // Save files
+        $pathDocx = "output/Docx/{$domain}/";
+        self::saveDocx($phpWordTemplate, $pathDocx, $shortenedTitle);
+
+        $pathHTML = "output/HTML/{$domain}/";
+        self::saveHTML($phpWordTemplate, $pathHTML, $shortenedTitle);
     }
 
     /**
@@ -67,7 +67,8 @@ class Document
      * @param  $title
      * @return void
      */
-    public static function saveHTML($phpWordTemplate, $path, $title) {
+    public static function saveHTML($phpWordTemplate, $path, $title)
+    {
         if (!file_exists($path)) {
             mkdir($path, 0755, true);
         }
@@ -83,7 +84,8 @@ class Document
      * @param  $title
      * @return void
      */
-    public static function saveDocx($phpWordTemplate, $path, $title) {
+    public static function saveDocx($phpWordTemplate, $path, $title)
+    {
         if (!file_exists($path)) {
             mkdir($path, 0755, true);
         }
