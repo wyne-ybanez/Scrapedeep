@@ -28,6 +28,9 @@ class Document
             ['spaceAfter' => 640]
         );
 
+        // Shorten title
+        $title = strlen($title) > 80 ? substr($title, 0, 70) . '...' : $title;
+
         // New portrait section
         $section = $phpWordTemplate->addSection();
 
