@@ -1,8 +1,8 @@
-# Scrapeheap
+# Scrapedeep
 
-Originally from [Dan Devine](https://github.com/danieldevine) - A Content Scraping Tool
+Originally from [Dan Devine](https://github.com/danieldevine) Scrapedeep is a replica of [Scrapeheap](https://github.com/danieldevine/scrapeheap) - A Content Scraping Tool
 
-- [Scrapeheap](#scrapeheap)
+- [Scrapedeep](#scrapedeep)
   - [Instructions](#instructions)
   - [Latest Updates](#latest-updates)
   - [Local Deployment](#local-deployment)
@@ -12,7 +12,7 @@ Originally from [Dan Devine](https://github.com/danieldevine) - A Content Scrapi
 
 ## Instructions
 
-Right now this version of scrapeheap is at it's infancy. Don't expect any fancy user interface. Just pop a URL in and expect results. Simple as that.
+Right now this version of scrapedeep is at it's infancy. Don't expect any fancy user interface. Just pop a URL in and expect results. Simple as that.
 
 &nbsp;
 
@@ -27,9 +27,9 @@ Right now this version of scrapeheap is at it's infancy. Don't expect any fancy 
 ## Local Deployment
 
 1. Download/Clone the project
-2. Install dependencies by running `composer install && npm instsall`
+2. Install dependencies by running `composer install && npm install`
 3. Ensure you put put the project where your valet has been parked in
-4. Access the project locally via Valet at http://scrapeheap.test
+4. Access the project locally via Valet at http://scrapedeep.test
 
 This assumes you have Valet installed and properly configured for your project. If not, please refer to the [Valet documentation](https://laravel.com/docs/10.x/valet) for setup instructions.
 
@@ -39,6 +39,6 @@ This assumes you have Valet installed and properly configured for your project. 
 
 - We're using RoachPHP here: https://roach-php.dev/docs/introduction
 
-- Check out Dan's original project on this: https://github.com/danieldevine/scrapeheap
+- Check out Dan's original project on this: https://github.com/danieldevine/scrapedeep
 
 - Here's a useful guide: https://codewithkyrian.com/p/roachphp-mastering-web-scraping-with-php
