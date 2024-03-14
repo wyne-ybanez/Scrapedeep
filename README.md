@@ -1,6 +1,6 @@
 # Scrapedeep
 
-Originally from [Dan Devine](https://github.com/danieldevine) Scrapedeep is a replica of [Scrapeheap](https://github.com/danieldevine/scrapeheap) - A Content Scraping Tool
+Originally from [Dan Devine](https://github.com/danieldevine). Scrapedeep is a replica of [Scrapeheap](https://github.com/danieldevine/scrapeheap) - A Web Content Scraping Tool
 
 - [Scrapedeep](#scrapedeep)
   - [Instructions](#instructions)
