@@ -24,8 +24,14 @@ $markdown = isset($_POST['markdown']);
 <body>
     <h1>Scrapedeep</h1>
     <?php (new Scrapeheap)->scrape($target_url, $word_doc, $html, $markdown); ?>
+
+    <!-- Scroll to Top -->
+    <button onclick="topFunction()" id="BackToTop" class="button" title="Go to top">
+      <p>Back to Top</p>
+    </button>
 </body>
 
 <script src="script.js"></script>
+<script src="backToTop.js"></script>
 
 </html>

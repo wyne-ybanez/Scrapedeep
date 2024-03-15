@@ -1,10 +1,46 @@
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    max-width: 100%;
+    scroll-behavior: smooth;
+    overscroll-behavior: none;
+}
+
 body {
     padding: 10vh 10vw 10vh 10vw;
     font-family: monospace, sans-serif;
+    color: white;
+    background-color: #181a1b;
 }
 
 .button {
     margin-top: 1rem;
     padding: 0.8rem 1.2rem;
     font-size: 1rem;
+    border: 0.5px solid white;
+    border-radius: 3px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: whitesmoke;
+    color: #000;
+    transition: 0.2s ease-in;
+}
+
+#BackToTop {
+    padding: 0.1rem 1.2rem;
+    font-size: 0.9rem;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 99;
+    cursor: pointer;
 }
