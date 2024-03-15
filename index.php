@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scrapedeep | Child of Scrapeheap</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -30,7 +31,7 @@
         <label for="markdown">Markdown</label>
         <br>
         <br>
-        <input type="submit" value="Scrape">
+        <input type="submit" value="Scrape" class="button">
     </form>
 </body>
 

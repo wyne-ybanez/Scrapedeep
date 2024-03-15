@@ -60,7 +60,7 @@ class Scrapeheap
             <label for="markdown">Markdown</label>
             <br>
             <br>
-            <input type="submit" value="Scrape">
+            <input type="submit" value="Scrape" class="button">
         </form>';
     }
 }

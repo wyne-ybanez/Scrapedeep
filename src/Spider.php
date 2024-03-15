@@ -108,6 +108,7 @@ class Spider extends BasicSpider
                 });
 
             $content = $response->filter('body')->text();
+            $content = str_replace('\u{A0}', "\n", $content);
 
             dump($content);
         }
