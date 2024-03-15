@@ -49,8 +49,9 @@ class Document
 
         $domain = parse_url($target_url, PHP_URL_HOST);
 
-        // Shorten path title for doc files
+        // Format & shorten path title for doc files
         $pathTitle = strlen($title) > 80 ? substr($title, 0, 80) . '...' : $title;
+        $pathTitle = self::formatTitle( $title);
 
         // Save files
         $pathDocx = "output/Docx/{$domain}/";
@@ -60,7 +61,7 @@ class Document
         self::saveHTML($phpWordTemplate, $pathHTML, $pathTitle);
 
         $pathMarkdown = "output/Markdown/{$domain}/";
-        self::saveMarkdown($content, $pathMarkdown, $pathTitle);
+        self::saveMarkdown($content, $pathMarkdown, $pathTitle, $title);
     }
 
     /**
@@ -71,13 +72,13 @@ class Document
      * @param  $title
      * @return void
      */
-    public static function saveHTML($phpWordTemplate, $path, $title)
+    public static function saveHTML($phpWordTemplate, $path, $pathTitle)
     {
         if (!file_exists($path)) {
             mkdir($path, 0755, true);
         }
         $objWriter = IOFactory::createWriter($phpWordTemplate, 'HTML');
-        $objWriter->save("{$path}{$title}.html");
+        $objWriter->save("{$path}{$pathTitle}.html");
     }
 
     /**
@@ -88,13 +89,13 @@ class Document
      * @param  $title
      * @return void
      */
-    public static function saveDocx($phpWordTemplate, $path, $title)
+    public static function saveDocx($phpWordTemplate, $path, $pathTitle)
     {
         if (!file_exists($path)) {
             mkdir($path, 0755, true);
         }
         $objWriter = IOFactory::createWriter($phpWordTemplate, 'Word2007');
-        $objWriter->save("{$path}{$title}.docx");
+        $objWriter->save("{$path}{$pathTitle}.docx");
     }
 
     /**
@@ -105,23 +106,50 @@ class Document
      * @param  $title
      * @return void
      */
-    public static function saveMarkdown($content, $path, $title)
+    public static function saveMarkdown($content, $path, $pathTitle, $title)
     {
         if (!file_exists($path)) {
             mkdir($path, 0755, true);
         }
 
-        $markdownContent = new Parsedown();
-
-        $markdownContent::instance()
-            ->setBreaksEnabled(true)
-            ->text($title)
-            ->text("\n \n")
-            ->text($content);
-
-        // concatenate doc title to content
+        // formats doc with title
         $markdownContent = "# {$title}\n\n{$content}";
 
-        file_put_contents("{$path}{$title}.md", $markdownContent);
+        file_put_contents("{$path}{$pathTitle}.md", $markdownContent);
+    }
+
+    /**
+     * Formats and Shortens Title
+     *
+     * @param  string $title
+     * @return string
+     */
+    public static function formatTitle($title)
+    {
+        $title = str_replace(' ', '_', $title);
+        $title = str_replace('&', 'and', $title);
+        $title = str_replace('|', '', $title);
+        $title = str_replace('%', '_percent', $title);
+        $title = str_replace('{', '_', $title);
+        $title = str_replace('}', '_', $title);
+        $title = str_replace("\\", '_', $title);
+        $title = str_replace("<", '_', $title);
+        $title = str_replace(">", '_', $title);
+        $title = str_replace("*", '', $title);
+        $title = str_replace("?", '', $title);
+        $title = str_replace("/", '_', $title);
+        $title = str_replace("$", '', $title);
+        $title = str_replace("!", '', $title);
+        $title = str_replace("'", '', $title);
+        $title = str_replace('"', '', $title);
+        $title = str_replace(":", '_', $title);
+        $title = str_replace("@", '', $title);
+        $title = str_replace("+", '', $title);
+        $title = str_replace("`", '', $title);
+        $title = str_replace("=", '_', $title);
+        $title = str_replace(",", '_', $title);
+        $title = str_replace("-", '_', $title);
+
+        return $title;
     }
 }
