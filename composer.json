@@ -7,7 +7,8 @@
         "spatie/crawler": "^8.1",
         "roach-php/core": "^3.0",
         "phpoffice/phpword": "^1.2",
-        "filp/whoops": "^2.15"
+        "filp/whoops": "^2.15",
+        "erusev/parsedown": "^1.7"
     },
     "license": "MIT",
     "autoload": {

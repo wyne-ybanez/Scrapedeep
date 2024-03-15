@@ -97,13 +97,12 @@ class Spider extends BasicSpider
         $current_uri = $response->getUri();
 
         if ($response->filter('title')->count() > 0) {
-
             $title = $response->filter('title')->text();
         }
 
         if ($response->filter('body')->count() > 0) {
             $response
-                ->filter('body nav, body script, body style, body footer, body noscript, body img, body object[data*=".pdf"], body img[src*=".png"], body img[src*=".jpg"], body img[src*=".webp"], div.elementor-location-header, div.elementor-location-footer, div.elementor-image') //what we dont want to see
+                ->filter('body nav, body script, body style, body footer, body noscript, body img, body object[data*=".pdf"], body img[src*=".png"], body img[src*=".jpg"], body img[src*=".webp"], div.elementor-location-header, div.elementor-location-footer, div.elementor-image, zip') //what we dont want to see
                 ->each(function ($html_tag) {
                     $html_tag->getNode(0)->parentNode->removeChild($html_tag->getNode(0)); // remove these elements from DOM
                 });
