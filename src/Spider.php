@@ -112,7 +112,12 @@ class Spider extends BasicSpider
             dump($content);
         }
 
-        Document::make($current_uri, $title, $content);
+        // conditional inputs
+        $word_doc = $this->context['word_doc'];
+        $html = $this->context['html'];
+        $markdown = $this->context['markdown'];
+
+        Document::make($current_uri, $title, $content, $word_doc, $html, $markdown);
 
         yield $this->item([
             'title' => $title,

@@ -17,7 +17,7 @@ class Document
      * @param string $content
      * @return void
      */
-    public static function make(string $target_url, string $title, string $content): void
+    public static function make(string $target_url, string $title, string $content, bool $word_doc, bool $html, bool $markdown): void
     {
         $phpWordTemplate = new PhpWord;
 
@@ -54,14 +54,26 @@ class Document
         $pathTitle = self::formatTitle( $title);
 
         // Save files
-        $pathDocx = "output/Docx/{$domain}/";
-        self::saveDocx($phpWordTemplate, $pathDocx, $pathTitle);
+        if ($word_doc) {
+            $pathDocx = "output/Docx/{$domain}/";
+            self::saveDocx($phpWordTemplate, $pathDocx, $pathTitle);
+        }
 
-        $pathHTML = "output/HTML/{$domain}/";
-        self::saveHTML($phpWordTemplate, $pathHTML, $pathTitle);
+        if ($html) {
+            $pathHTML = "output/HTML/{$domain}/";
+            self::saveHTML($phpWordTemplate, $pathHTML, $pathTitle);
+        }
 
-        $pathMarkdown = "output/Markdown/{$domain}/";
-        self::saveMarkdown($content, $pathMarkdown, $pathTitle, $title);
+        if ($markdown) {
+            $pathMarkdown = "output/Markdown/{$domain}/";
+            self::saveMarkdown($content, $pathMarkdown, $pathTitle, $title);
+        }
+
+        // defaults to just save HTML file format if user doesnt choose any format
+        if (!$word_doc && !$html && !$markdown) {
+            $pathHTML = "output/HTML/{$domain}/";
+            self::saveHTML($phpWordTemplate, $pathHTML, $pathTitle);
+        }
     }
 
     /**

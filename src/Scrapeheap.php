@@ -17,8 +17,7 @@ class Scrapeheap
      * @return void
      */
 
-    // In progress:  public function scrape(string $target_url, bool $word_doc, bool $html, bool $markdown): void
-    public function scrape(string $target_url): void
+     public function scrape(string $target_url, bool $word_doc, bool $html, bool $markdown): void
     {
         $base_domain = parse_url($target_url, PHP_URL_HOST);
 
@@ -26,7 +25,12 @@ class Scrapeheap
             Roach::startSpider(
                 Spider::class,
                 new Overrides(startUrls: [$target_url]),
-                context: ['base_domain' => $base_domain],
+                context: [
+                                    'base_domain' => $base_domain,
+                                    'word_doc' => $word_doc,
+                                    'html' => $html,
+                                    'markdown' => $markdown,
+                                    ],
             );
         } catch (\Exception $e) {
             echo 'Caught exception: ', $e->getMessage(), "\n";
