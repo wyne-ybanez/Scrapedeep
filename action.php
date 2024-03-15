@@ -26,4 +26,6 @@ $markdown = isset($_POST['markdown']);
     <?php (new Scrapeheap)->scrape($target_url, $word_doc, $html, $markdown); ?>
 </body>
 
-</html
+<script src="script.js"></script>
+
+</html>

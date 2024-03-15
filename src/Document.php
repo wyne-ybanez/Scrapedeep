@@ -50,7 +50,6 @@ class Document
         $domain = parse_url($target_url, PHP_URL_HOST);
 
         // Format & shorten path title for doc files
-        $pathTitle = strlen($title) > 80 ? substr($title, 0, 80) . '...' : $title;
         $pathTitle = self::formatTitle( $title);
 
         // Save files
@@ -161,6 +160,8 @@ class Document
         $title = str_replace("=", '_', $title);
         $title = str_replace(",", '_', $title);
         $title = str_replace("-", '_', $title);
+
+        $title = strlen($title) > 80 ? substr($title, 0, 80) . '...' : $title;
 
         return $title;
     }
