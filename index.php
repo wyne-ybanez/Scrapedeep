@@ -35,6 +35,6 @@
     </form>
 </body>
 
-<script src="script.js"></Script>
+<script src="js/script.js"></Script>
 
 </html>

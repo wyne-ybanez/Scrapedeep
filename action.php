@@ -31,7 +31,7 @@ $markdown = isset($_POST['markdown']);
     </button>
 </body>
 
-<script src="script.js"></script>
-<script src="backToTop.js"></script>
+<script src="js/script.js"></script>
+<script src="js/backToTop.js"></script>
 
 </html>
