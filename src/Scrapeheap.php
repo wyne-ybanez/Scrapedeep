@@ -16,6 +16,8 @@ class Scrapeheap
      * @param string $target_url
      * @return void
      */
+
+    // In progress:  public function scrape(string $target_url, bool $word_doc, bool $html, bool $markdown): void
     public function scrape(string $target_url): void
     {
         $base_domain = parse_url($target_url, PHP_URL_HOST);
