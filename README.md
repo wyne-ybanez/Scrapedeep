@@ -39,7 +39,7 @@ Right now this version of scrapedeep is at it's infancy. Don't expect any fancy 
 
 1. Download/Clone the project
 2. Install dependencies by running `composer install && npm install`
-3. Ensure you put put the project where your valet has been parked in
+3. Ensure you put the project where your valet has been parked in
 4. Access the project locally via Valet at http://scrapedeep.test
 
 This assumes you have Valet installed and properly configured for your project. If not, please refer to the [Valet documentation](https://laravel.com/docs/10.x/valet) for setup instructions.
