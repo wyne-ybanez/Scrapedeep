@@ -13,7 +13,11 @@ Originally from [Dan Devine](https://github.com/danieldevine). Scrapedeep is a r
 
 ## Overview
 
-Get the url of the site you'd like to scrape content for. Content files will be generated for the pages of that site. The main body of text for the content is dumped without any formatting (e.g. line breaks, font sizes, font styles ... etc.)
+Get the url of the site you'd like to scrape content for. Content files will be generated for the pages of that site. The main body of text for the content is dumped WITHOUT any formatting (e.g. line breaks, font sizes, font styles ... etc.)
+
+This project is suited for locally hosted websites. For instance, if you aim to alter the overall appearance of your site while keeping its content unchanged, this tool extracts the text content for you.
+
+IMPORTANT: ensure you've disabled basic auth for the site you're scraping otherwise, this scraper won't work for it.
 
 &nbsp;
 
