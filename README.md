@@ -12,7 +12,7 @@ Originally from [Dan Devine](https://github.com/danieldevine). Scrapedeep is a r
 
 ## Instructions
 
-Right now this version of scrapedeep is at it's infancy. Don't expect any fancy user interface. Just pop a URL in and expect results. Simple as that.
+Right now this version of scrapedeep is at it's infancy. Don't expect any fancy user interface. Just pop a URL in and expect results. These will be thrown into a folder called `output/`. Simple as that.
 
 &nbsp;
 
