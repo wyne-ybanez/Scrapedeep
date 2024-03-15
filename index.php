@@ -16,8 +16,8 @@
         <br>
         <br>
         <p>
-            Choose a format for your scraped content. <br>
-            Otherwise they will be thrown back to you as HTML files.
+            Choose a file type for your scraped content. <br>
+            Otherwise you will get them as HTML files.
         </p>
         <input type="checkbox" name="word_doc" id="word_doc" value="word_doc">
         <label for="word_doc">Word Doc</label>

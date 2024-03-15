@@ -23,7 +23,7 @@ IMPORTANT: ensure you've disabled basic auth for the site you're scraping otherw
 
 ## Instructions
 
-Right now this version of scrapedeep is at it's infancy. Don't expect any fancy user interface. Just pop a URL in and expect results. These will be thrown into a folder called `output/`. Simple as that.
+Right now this version of scrapedeep is at it's infancy. Don't expect any fancy user interface. Just pop a URL in, pick what file type your content is going to be thrown into and expect results. These will be thrown into a folder called `output/`. Simple as that.
 
 &nbsp;
 
