@@ -30,7 +30,7 @@ Right now this version of scrapedeep is at it's infancy. Don't expect any fancy 
 ## Latest Updates
 
 1. See the dump of content as your scraper works
-2. Saves Docx & HTML in separate folders
+2. Saves HTML & MD files in separate folders
 3. Adds some nice helpful text so if you want to scrape again, just go ahead
 
 &nbsp;
