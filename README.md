@@ -3,10 +3,17 @@
 Originally from [Dan Devine](https://github.com/danieldevine). Scrapedeep is a replica of [Scrapeheap](https://github.com/danieldevine/scrapeheap) - A Web Content Scraping Tool
 
 - [Scrapedeep](#scrapedeep)
+  - [Overview](#overview)
   - [Instructions](#instructions)
   - [Latest Updates](#latest-updates)
   - [Local Deployment](#local-deployment)
   - [References](#references)
+
+&nbsp;
+
+## Overview
+
+Get the url of the site you'd like to scrape content for. Content files will be generated for the pages of that site. The main body of text for the content is dumped without any formatting (e.g. line breaks, font sizes, font styles ... etc.)
 
 &nbsp;
 
